@@ -1,3 +1,45 @@
+# Veri Yapıları Projesi - Algoritma Analiz Raporu
+
+Bu proje kapsamında geliştirilen **Kampüs Navigasyon Sistemi** için kullanılan graf (graph) algoritmalarının zaman karmaşıklığı analizleri aşağıdadır.
+
+## 1. Kullanılan Veri Yapısı ve Tanımlar
+
+Algoritmalarımızın performansını analiz ederken aşağıdaki değişkenler temel alınmıştır:
+- **V (Vertex / Düğüm):** Kampüsteki toplam bina sayısı.
+- **E (Edge / Kenar):** Binaları birbirine bağlayan toplam yol sayısı.
+
+Projede graf yapısı hem **Komşuluk Matrisi (Adjacency Matrix)** hem de **Komşuluk Listesi (Adjacency List)** olarak modellenmiştir. Ancak arama algoritmaları (BFS ve DFS), performans verimliliği açısından **Komşuluk Listesi** üzerinde çalıştırılmıştır.
+
+---
+
+## 2. BFS Algoritması (En Kısa Yol)
+
+Genişlik Öncelikli Arama (Breadth-First Search - BFS), kampüs içindeki iki bina arasındaki en az duraklı yolu bulmak için kullanılmıştır.
+
+* **Zaman Karmaşıklığı:** $O(V + E)$
+* **Analiz:**
+    * En kötü durumda (worst-case), algoritma başlangıç düğümünden ulaşılabilen tüm düğümleri ($V$) ziyaret eder.
+    * Ziyaret edilen her düğümün komşularını kontrol ederken, graf üzerindeki tüm kenarlar ($E$) üzerinden en fazla birer kez geçilir.
+    * Komşuluk listesi kullanıldığı için boş bağlantıları kontrol etmekle zaman kaybedilmez. (Matris kullanılsaydı karmaşıklık $O(V^2)$ olurdu).
+
+---
+
+## 3. DFS Algoritması (Bağlı Bileşen Analizi)
+
+Derinlik Öncelikli Arama (Depth-First Search - DFS), kampüsteki kopuk alanların (bağlı olmayan bileşenlerin) tespiti için kullanılmıştır.
+
+* **Zaman Karmaşıklığı:** $O(V + E)$
+* **Analiz:**
+    * DFS algoritması, özyinelemeli (recursive) bir yapıya sahiptir.
+    * Algoritma, ziyaret edilmemiş her düğüm ($V$) için bir kez çağrılır.
+    * Her düğümün komşuluk listesindeki kenarlar ($E$) taranır.
+    * Toplam işlem süresi, düğüm sayısı ve kenar sayısının toplamı ile doğru orantılıdır.
+
+---
+
+## 4. Sonuç
+
+Her iki algoritma da **Lineer Zaman Karmaşıklığına ($O(V+E)$)** sahiptir. Bu durum, kampüs haritası büyüse (bina ve yol sayısı artsa) bile sistemin performansının kabul edilebilir seviyelerde kalacağını ve verimli çalışacağını gösterir.
 ---
 
 ## Soru 2: Tarayıcı Geçmişi Simülasyonu (Browser History)
