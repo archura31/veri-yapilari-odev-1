@@ -39,7 +39,7 @@ Derinlik Öncelikli Arama (Depth-First Search - DFS), kampüsteki kopuk alanlar�
 
 ## 4. Sonuç
 
-Her iki algoritma da **Lineer Zaman Karmaşıklığına ($O(V+E)$)** sahiptir. Bu durum, kampüs haritası büyüse (bina ve yol sayısı artsa) bile sistemin performansının kabul edilebilir seviyelerde kalacağını ve verimli çalışacağını gösterir.
+Her iki algoritma da **Lineer Zaman Karmaşıklığına (O(V+E))** sahiptir. Bu durum, kampüs haritası büyüse (bina ve yol sayısı artsa) bile sistemin performansının kabul edilebilir seviyelerde kalacağını ve verimli çalışacağını gösterir.
 ---
 
 ## Soru 2: Tarayıcı Geçmişi Simülasyonu (Browser History)
